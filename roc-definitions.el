@@ -55,6 +55,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
 ;;        hopefully these are closer to the intended colors than the sRGB values
 ;;        that Emacs seems to dislike
 (defvar roc-colors           ; ANSI(ROC terminal)
+  ;; Currently we are just changing the first column
   ;; name     sRGB      Gen RGB   256       16              8
   '((base03  "#002b36" "#042028" "#1c1c1c" "brightblack"   "black")
     (base02  "#073642" "#0a2832" "#262626" "black"         "black")
@@ -64,14 +65,18 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
     (base1   "#93a1a1" "#81908f" "#8a8a8a" "brightcyan"    "cyan")
     (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "white"         "white")
     (base3   "#fdf6e3" "#fcf4dc" "#ffffd7" "brightwhite"   "white")
-    (yellow  "#b58900" "#a57705" "#af8700" "yellow"        "yellow")
-    (orange  "#cb4b16" "#bd3612" "#d75f00" "brightred"     "red")
+    (yellow  "#daa520" "#a57705" "#af8700" "yellow"        "yellow")
+    (orange  "#ffa500" "#bd3612" "#d75f00" "orange"     "red")
     (red     "#dc322f" "#c60007" "#d70000" "red"           "red")
     (magenta "#d33682" "#c61b6e" "#af005f" "magenta"       "magenta")
     (violet  "#6c71c4" "#5859b7" "#5f5faf" "brightmagenta" "magenta")
     (blue    "#268bd2" "#2075c7" "#0087ff" "blue"          "blue")
     (cyan    "#2aa198" "#259185" "#00afaf" "cyan"          "cyan")
-    (green   "#859900" "#728a05" "#5f8700" "green"         "green"))
+    (green   "#00cd00" "#728a05" "#5f8700" "forest green"  "green"))
+    ;; (green   "#859900" "#728a05" "#5f8700" "green"         "green")
+    ;; (orange  "#cb4b16" "#bd3612" "#d75f00" "brightred"     "red")
+    ;; (yellow  "#b58900" "#a57705" "#af8700" "yellow"        "yellow")
+  
   "This is a table of all the colors used by the ROC color theme. Each
    column is a different set, one of which will be chosen based on term
    capabilities, etc.")
@@ -180,8 +185,8 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
               (fmt-revbb `(:weight ,bright-bold :slant normal :underline nil  :inverse-video t))
               (fmt-revbbu `(:weight ,bright-bold :slant normal  :underline ,underline :inverse-video t)))
           `((;; basic
-             (default ((t (,@fg-base0 ,@bg-back)))) ; Normal
-             (cursor ((t (,@fg-base03 ,@bg-base0)))) ; Cursor
+             (default ((t (,@fg-base2 ,@bg-back)))) ; Normal @fg-base0 ,@bg-back
+             (cursor ((t (,@fg-base03 ,@bg-base0)))) ; Cursor @fg-base03 ,@bg-base0
              (error ((t (,@fmt-bold ,@fg-red)))) ; Error
              (escape-glyph-face ((t (,@fg-red))))
              (fringe ((t (,@fg-base01 ,@bg-base02))))
@@ -277,25 +282,25 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
              (eshell-ls-special ((t (,@fg-violet))))
              (eshell-ls-symlink ((t (,@fg-cyan))))
              (eshell-ls-unreadable ((t (,@fg-base00))))
-             (eshell-prompt ((t (,@fmt-bold ,@fg-green))))
+             (eshell-prompt ((t (,@fmt-bold ,@fg-red))))
              ;; font-lock
-             (font-lock-builtin-face ((t (,@fmt-none ,@fg-green)))) ; Statement
-             (font-lock-comment-face ((t (,@fmt-ital ,@fg-base01)))) ; Comment
+             (font-lock-builtin-face ((t (,@fmt-none ,@fg-magenta)))) ; Statement
+             (font-lock-comment-face ((t (,@fmt-ital ,@fg-yellow)))) ; Comment
              (font-lock-constant-face ((t (,@fmt-none ,@fg-cyan)))) ; Constant
              (font-lock-function-name-face ; Identifier
               ((t (,@fmt-none ,@fg-blue))))
-             (font-lock-keyword-face ((t (,@fmt-none ,@fg-green)))) ; Statement
-             (font-lock-string-face ((t (,@fmt-none ,@fg-cyan)))) ; Constant
-             (font-lock-type-face ((t (,@fmt-none ,@fg-yellow)))) ; Type
+             (font-lock-keyword-face ((t (,@fmt-none ,@fg-orange)))) ; Statement
+             (font-lock-string-face ((t (,@fmt-none ,@fg-green)))) ; Constant
+             (font-lock-type-face ((t (,@fmt-none ,@fg-violet)))) ; Type
              (font-lock-variable-name-face ; Identifier
-              ((t (,@fmt-none ,@fg-blue))))
+              ((t (,@fmt-none ,@fg-red))))
              (font-lock-warning-face ((t (,@fmt-bold ,@fg-red)))) ; Error
              (font-lock-doc-face ((t (,@fmt-ital ,@fg-base01)))) ; Comment
              (font-lock-doc-string-face  ; Comment (XEmacs-only)
               ((t (,@fmt-ital ,@fg-base01))))
              (font-lock-color-constant-face ((t (,@fmt-none ,@fg-green))))
              (font-lock-comment-delimiter-face ; Comment
-              ((t (,@fmt-ital ,@fg-base01))))
+              ((t (,@fmt-ital ,@fg-yellow))))
              (font-lock-preprocessor-face ; PreProc
               ((t (,@fmt-none ,@fg-orange))))
              (font-lock-reference-face ((t (,@fmt-none ,@fg-cyan))))
@@ -306,7 +311,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
              (font-lock-special-keyword-face ; Special
               ((t (,@fmt-none ,@fg-red))))
              (font-lock-exit-face ((t (,@fmt-none ,@fg-red))))
-             (font-lock-other-emphasized-face ((t (,@fmt-bldi ,@fg-violet))))
+             (font-lock-other-emphasized-face ((t (,@fmt-bldi ,@fg-cyan))))
              (font-lock-regexp-grouping-backslash
               ((t (,@fmt-none ,@fg-yellow))))
              ;; info
