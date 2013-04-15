@@ -64,7 +64,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
     (base0   "#839496" "#708183" "#808080" "brightblue"    "blue")
     (base1   "#93a1a1" "#81908f" "#8a8a8a" "brightcyan"    "cyan")
     (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "white"         "white")
-    (base3   "#fdf6e3" "#fcf4dc" "#ffffd7" "brightwhite"   "white")
+    (base3   "#fdf5e6" "#fcf4dc" "#ffffd7" "old lace"      "white")
     (yellow  "#b8860b" "#a57705" "#af8700" "yellow"        "yellow")
     (orange  "#ff8c00" "#bd3612" "#d75f00" "dark orange"   "red")
     (red     "#b22222" "#c60007" "#d70000" "firebrick"     "red")
@@ -185,7 +185,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
               (fmt-revbb `(:weight ,bright-bold :slant normal :underline nil  :inverse-video t))
               (fmt-revbbu `(:weight ,bright-bold :slant normal  :underline ,underline :inverse-video t)))
           `((;; basic
-             (default ((t (,@fg-base2 ,@bg-back)))) ; Normal @fg-base0 ,@bg-back
+             (default ((t (,@fg-base3 ,@bg-back)))) ; Normal @fg-base0 ,@bg-back
              (cursor ((t (,@fg-base03 ,@bg-base0)))) ; Cursor @fg-base03 ,@bg-base0
              (error ((t (,@fmt-bold ,@fg-red)))) ; Error
              (escape-glyph-face ((t (,@fg-red))))
