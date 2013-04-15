@@ -65,14 +65,14 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
     (base1   "#93a1a1" "#81908f" "#8a8a8a" "brightcyan"    "cyan")
     (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "white"         "white")
     (base3   "#fdf6e3" "#fcf4dc" "#ffffd7" "brightwhite"   "white")
-    (yellow  "#daa520" "#a57705" "#af8700" "yellow"        "yellow")
-    (orange  "#ffa500" "#bd3612" "#d75f00" "orange"     "red")
-    (red     "#dc322f" "#c60007" "#d70000" "red"           "red")
-    (magenta "#d33682" "#c61b6e" "#af005f" "magenta"       "magenta")
-    (violet  "#6c71c4" "#5859b7" "#5f5faf" "brightmagenta" "magenta")
-    (blue    "#268bd2" "#2075c7" "#0087ff" "blue"          "blue")
-    (cyan    "#2aa198" "#259185" "#00afaf" "cyan"          "cyan")
-    (green   "#00cd00" "#728a05" "#5f8700" "forest green"  "green"))
+    (yellow  "#b8860b" "#a57705" "#af8700" "yellow"        "yellow")
+    (orange  "#ff8c00" "#bd3612" "#d75f00" "dark orange"   "red")
+    (red     "#b22222" "#c60007" "#d70000" "firebrick"     "red")
+    (magenta "#cd2990" "#c61b6e" "#af005f" "maroon3"       "magenta") ;; try magenta3 or maroon3
+    (violet  "#68228b" "#5859b7" "#5f5faf" "DarkOrchid4"   "magenta")
+    (blue    "#0000ff" "#2075c7" "#0087ff" "blue"          "blue")
+    (cyan    "#008b8b" "#259185" "#00afaf" "cyan4"         "cyan") ;; also try turquoise3
+    (green   "#228b22" "#728a05" "#5f8700" "forest green"  "green"))
     ;; (green   "#859900" "#728a05" "#5f8700" "green"         "green")
     ;; (orange  "#cb4b16" "#bd3612" "#d75f00" "brightred"     "red")
     ;; (yellow  "#b58900" "#a57705" "#af8700" "yellow"        "yellow")
@@ -286,7 +286,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
              ;; font-lock
              (font-lock-builtin-face ((t (,@fmt-none ,@fg-magenta)))) ; Statement
              (font-lock-comment-face ((t (,@fmt-ital ,@fg-yellow)))) ; Comment
-             (font-lock-constant-face ((t (,@fmt-none ,@fg-cyan)))) ; Constant
+             (font-lock-constant-face ((t (,@fmt-none ,@fg-red)))) ; Constant
              (font-lock-function-name-face ; Identifier
               ((t (,@fmt-none ,@fg-blue))))
              (font-lock-keyword-face ((t (,@fmt-none ,@fg-orange)))) ; Statement
@@ -295,9 +295,9 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
              (font-lock-variable-name-face ; Identifier
               ((t (,@fmt-none ,@fg-red))))
              (font-lock-warning-face ((t (,@fmt-bold ,@fg-red)))) ; Error
-             (font-lock-doc-face ((t (,@fmt-ital ,@fg-base01)))) ; Comment
+             (font-lock-doc-face ((t (,@fmt-ital ,@fg-yellow)))) ; Comment
              (font-lock-doc-string-face  ; Comment (XEmacs-only)
-              ((t (,@fmt-ital ,@fg-base01))))
+              ((t (,@fmt-ital ,@fg-yellow))))
              (font-lock-color-constant-face ((t (,@fmt-none ,@fg-green))))
              (font-lock-comment-delimiter-face ; Comment
               ((t (,@fmt-ital ,@fg-yellow))))
@@ -305,7 +305,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
               ((t (,@fmt-none ,@fg-orange))))
              (font-lock-reference-face ((t (,@fmt-none ,@fg-cyan))))
              (font-lock-negation-char-face ((t (,@fmt-none ,@fg-red))))
-             (font-lock-other-type-face ((t (,@fmt-ital ,@fg-blue))))
+             (font-lock-other-type-face ((t (,@fmt-ital ,@fg-magenta))))
              (font-lock-regexp-grouping-construct
               ((t (,@fmt-none ,@fg-orange))))
              (font-lock-special-keyword-face ; Special
