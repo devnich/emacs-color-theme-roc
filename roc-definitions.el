@@ -54,8 +54,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
 ;; FIXME: The Generic RGB colors will actually vary from device to device, but
 ;;        hopefully these are closer to the intended colors than the sRGB values
 ;;        that Emacs seems to dislike
-(defvar roc-colors           ; ANSI(ROC terminal)
-  ;; Currently we are just changing the first column
+(defvar roc-colors           ; ANSI(ROC terminal) Currently we are just changing the first column
   ;; name     sRGB      Gen RGB   256       16              8
   '((base03  "#002b36" "#042028" "#1c1c1c" "brightblack"   "black")
     (base02  "#073642" "#0a2832" "#262626" "black"         "black")
@@ -64,7 +63,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
     (base0   "#839496" "#708183" "#808080" "brightblue"    "blue")
     (base1   "#93a1a1" "#81908f" "#8a8a8a" "brightcyan"    "cyan")
     (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "white"         "white")
-    (base3   "#fdf5e6" "#fcf4dc" "#ffffd7" "old lace"      "white")
+    (base3   "#fdf5e6" "#fcf4dc" "#ffffd7" "old lace"      "white") ;; terminator emacs is using the 256 column
     (yellow  "#b8860b" "#a57705" "#af8700" "yellow"        "yellow")
     (orange  "#ff8c00" "#bd3612" "#d75f00" "dark orange"   "red")
     (red     "#b22222" "#c60007" "#d70000" "firebrick"     "red")
@@ -73,9 +72,6 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
     (blue    "#0000ff" "#2075c7" "#0087ff" "blue"          "blue")
     (cyan    "#008b8b" "#259185" "#00afaf" "cyan4"         "cyan") ;; also try turquoise3
     (green   "#228b22" "#728a05" "#5f8700" "forest green"  "green"))
-    ;; (green   "#859900" "#728a05" "#5f8700" "green"         "green")
-    ;; (orange  "#cb4b16" "#bd3612" "#d75f00" "brightred"     "red")
-    ;; (yellow  "#b58900" "#a57705" "#af8700" "yellow"        "yellow")
   
   "This is a table of all the colors used by the ROC color theme. Each
    column is a different set, one of which will be chosen based on term
