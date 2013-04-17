@@ -54,24 +54,24 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
 ;; FIXME: The Generic RGB colors will actually vary from device to device, but
 ;;        hopefully these are closer to the intended colors than the sRGB values
 ;;        that Emacs seems to dislike
-(defvar roc-colors           ; ANSI(ROC terminal) sRGB and 256 are ID
+(defvar roc-colors           ; ANSI(ROC terminal) Currently we are just changing the first column
   ;; name     sRGB      Gen RGB   256       16              8
-  '((base03  "#002b36" "#042028" "#002b36" "brightblack"   "black")
-    (base02  "#073642" "#0a2832" "#073642" "black"         "black")
-    (base01  "#586e75" "#465a61" "#586e75" "brightgreen"   "green")
-    (base00  "#657b83" "#52676f" "#657b83" "brightyellow"  "yellow")
-    (base0   "#839496" "#708183" "#839496" "brightblue"    "blue")
-    (base1   "#93a1a1" "#81908f" "#93a1a1" "brightcyan"    "cyan")
-    (base2   "#eee8d5" "#e9e2cb" "#eee8d5" "white"         "white")
-    (base3   "#fdf5e6" "#fcf4dc" "#fdf5e6" "old lace"      "white") ;; terminator emacs is using the 256 column
-    (yellow  "#b8860b" "#a57705" "#b8860b" "yellow"        "yellow")
-    (orange  "#ff8c00" "#bd3612" "#ff8c00" "dark orange"   "red")
-    (red     "#b22222" "#c60007" "#b22222" "firebrick"     "red")
-    (magenta "#cd2990" "#c61b6e" "#cd2990" "maroon3"       "magenta") ;; try magenta3 or maroon3
-    (violet  "#68228b" "#5859b7" "#68228b" "DarkOrchid4"   "magenta")
-    (blue    "#0000ff" "#2075c7" "#0000ff" "blue"          "blue")
-    (cyan    "#008b8b" "#259185" "#008b8b" "cyan4"         "cyan") ;; also try turquoise3
-    (green   "#228b22" "#728a05" "#228b22" "forest green"  "green"))
+  '((base03  "#002b36" "#042028" "#1c1c1c" "brightblack"   "black")
+    (base02  "#073642" "#0a2832" "#262626" "black"         "black")
+    (base01  "#586e75" "#465a61" "#585858" "brightgreen"   "green")
+    (base00  "#657b83" "#52676f" "#626262" "brightyellow"  "yellow")
+    (base0   "#839496" "#708183" "#808080" "brightblue"    "blue")
+    (base1   "#93a1a1" "#81908f" "#8a8a8a" "brightcyan"    "cyan")
+    (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "white"         "white")
+    (base3   "#fdf5e6" "#fcf4dc" "#ffffd7" "old lace"      "white") ;; terminator emacs is using the 256 column
+    (yellow  "#b8860b" "#a57705" "#af8700" "yellow"        "yellow")
+    (orange  "#ff8c00" "#bd3612" "#d75f00" "dark orange"   "red")
+    (red     "#b22222" "#c60007" "#d70000" "firebrick"     "red")
+    (magenta "#cd2990" "#c61b6e" "#af005f" "maroon3"       "magenta") ;; try magenta3 or maroon3
+    (violet  "#68228b" "#5859b7" "#5f5faf" "DarkOrchid4"   "magenta")
+    (blue    "#0000ff" "#2075c7" "#0087ff" "blue"          "blue")
+    (cyan    "#008b8b" "#259185" "#00afaf" "cyan4"         "cyan") ;; also try turquoise3
+    (green   "#228b22" "#728a05" "#5f8700" "forest green"  "green"))
   
   "This is a table of all the colors used by the ROC color theme. Each
    column is a different set, one of which will be chosen based on term
