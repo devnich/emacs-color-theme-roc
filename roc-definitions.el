@@ -32,6 +32,16 @@ degraded color mode to test the approximate color values for accuracy."
   :type 'boolean
   :group 'roc)
 
+(defcustom roc-termcolors 16
+  "This setting applies to emacs in terminal (non-GUI) mode.
+If set to 16, emacs will use the terminal emulator's colorscheme (best option
+as long as you've set your emulator's colors to the Solarized palette). If
+set to 256 and your terminal is capable of displaying 256 colors, emacs will
+use the 256 degraded color mode."
+  :type 'integer
+  :options '(16 256)
+  :group 'roc)
+
 (defcustom roc-contrast 'normal
   "Stick with normal! It's been carefully tested. Setting this option to high or
 low does use the same ROC palette but simply shifts some values up or
@@ -56,37 +66,46 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
 ;;        that Emacs seems to dislike
 (defvar roc-colors           ; ANSI(ROC terminal) Currently we are just changing the first column
   ;; name     sRGB      Gen RGB   256       16              8
-  '((base03  "#002b36" "#042028" "#1c1c1c" "brightblack"   "black")
-    (base02  "#073642" "#0a2832" "#262626" "black"         "black")
-    (base01  "#586e75" "#465a61" "#585858" "brightgreen"   "green")
-    (base00  "#657b83" "#52676f" "#626262" "brightyellow"  "yellow")
-    (base0   "#839496" "#708183" "#808080" "brightblue"    "blue")
-    (base1   "#93a1a1" "#81908f" "#8a8a8a" "brightcyan"    "cyan")
-    (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "white"         "white")
-    (base3   "#fdf5e6" "#fcf4dc" "#ffffd7" "old lace"      "white") ;; terminator emacs is using the 256 column
-    (yellow  "#b8860b" "#a57705" "#af8700" "yellow"        "yellow")
-    (orange  "#ff8c00" "#bd3612" "#d75f00" "dark orange"   "red")
-    (red     "#b22222" "#c60007" "#d70000" "firebrick"     "red")
-    (magenta "#cd2990" "#c61b6e" "#af005f" "maroon3"       "magenta") ;; try magenta3 or maroon3
-    (violet  "#68228b" "#5859b7" "#5f5faf" "DarkOrchid4"   "magenta")
-    (blue    "#0000ff" "#2075c7" "#0087ff" "blue"          "blue")
-    (cyan    "#008b8b" "#259185" "#00afaf" "cyan4"         "cyan") ;; also try turquoise3
-    (green   "#228b22" "#728a05" "#5f8700" "forest green"  "green"))
+  '((base03  "#002b36" "#042028" "#1c1c1c" "#002b36" "black")
+    (base02  "#073642" "#0a2832" "#262626" "#073642" "black")
+    (base01  "#586e75" "#465a61" "#585858" "#586e75" "green")
+    (base00  "#657b83" "#52676f" "#626262" "#657b83" "yellow")
+    (base0   "#839496" "#708183" "#808080" "#839496" "blue")
+    (base1   "#93a1a1" "#81908f" "#8a8a8a" "#93a1a1" "cyan")
+    (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "#eee8d5" "white")
+    (base3   "#fdf5e6" "#fcf4dc" "#ffffd7" "#fdf5e6" "white") ;; terminator emacs is using the 256 column
+    (yellow  "#b8860b" "#a57705" "#af8700" "#b8860b" "yellow")
+    (orange  "#ff8c00" "#bd3612" "#d75f00" "#ff8c00" "red")
+    (red     "#b22222" "#c60007" "#d70000" "#b22222" "red")
+    (magenta "#cd2990" "#c61b6e" "#af005f" "#cd2990" "magenta") ;; try magenta3 or maroon3
+    (violet  "#68228b" "#5859b7" "#5f5faf" "#68228b" "magenta")
+    (blue    "#0000ff" "#2075c7" "#0087ff" "#0000ff" "blue")
+    (cyan    "#008b8b" "#259185" "#00afaf" "#008b8b" "cyan") ;; also try turquoise3
+    (green   "#228b22" "#728a05" "#5f8700" "#228b22" "green"))
   
   "This is a table of all the colors used by the ROC color theme. Each
    column is a different set, one of which will be chosen based on term
    capabilities, etc.")
 
 (defun roc-color-definitions (mode)
+  ;; (flet ((find-color (name)
+  ;;          (let* ((index (if window-system
+  ;;                            (if roc-degrade
+  ;;                                3
+  ;;                              (if roc-broken-srgb 2 1))
+  ;;                          (case (display-color-cells)
+  ;;                            (16 4)
+  ;;                            (8  5)
+  ;;                            (otherwise 3)))))
+  ;;            (nth index (assoc name roc-colors)))))
   (flet ((find-color (name)
-           (let* ((index (if window-system
-                             (if roc-degrade
-                                 3
-                               (if roc-broken-srgb 2 1))
-                           (case (display-color-cells)
-                             (16 4)
-                             (8  5)
-                             (otherwise 3)))))
+           (let ((index (if window-system
+                            (if roc-degrade
+                                3
+			      (if roc-broken-srgb 2 1))
+			  (if (= roc-termcolors 256)
+			      3
+			    4))))
              (nth index (assoc name roc-colors)))))
     (let ((base03      (find-color 'base03))
           (base02      (find-color 'base02))
