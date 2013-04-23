@@ -102,10 +102,10 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
            (let ((index (if window-system
                             (if roc-degrade
                                 3
-			      (if roc-broken-srgb 2 1))
-			  (if (= roc-termcolors 256)
-			      3
-			    4))))
+        		      (if roc-broken-srgb 2 1))
+        		  (if (= roc-termcolors 256)
+        		      3
+        		    4))))
              (nth index (assoc name roc-colors)))))
     (let ((base03      (find-color 'base03))
           (base02      (find-color 'base02))
@@ -552,7 +552,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
 	     (term-color-cyan ((t ( ,@fg-cyan))))
 	     (term-color-white ((t ( ,@fg-base00)))))
 
-            ((foreground-color . ,(when (<= 16 (display-color-cells)) base0))
+            ((foreground-color . ,(when (<= 16 (display-color-cells)) base3))
              (background-color . ,back)
              (background-mode . ,mode)
              (cursor-color . ,(when (<= 16 (display-color-cells))
