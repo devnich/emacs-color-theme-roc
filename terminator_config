@@ -1,0 +1,30 @@
+[global_config]
+  window_state = fullscreen
+  borderless = True
+[keybindings]
+  copy = <Ctrl><Shift>w
+  paste = <Ctrl><Shift>y
+[profiles]
+  [[default]]
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    font = DejaVu Sans Mono 14
+    use_system_font = False
+    foreground_color = "#ffffff"
+  [[roc-light]]
+    palette = "#ffffd7:#e4e4e4:#8a8a8a:#808080:#626262:#585858:#262626:#1c1c1c:#af8700:#d75f00:#d70000:#af005f:#5f5faf:#0087ff:#00afaf:#5f8700"
+    background_darkness = 0.0
+    use_system_font = False
+    foreground_color = "#002b36"
+    font = DejaVu Sans Mono 14
+    background_color = "#fdf5e6"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
+
+
