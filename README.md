@@ -10,11 +10,6 @@ See the [Solarized homepage] for screenshots,
 details and colorscheme versions for Vim, Mutt, popular terminal emulators and 
 other applications.
 
-Screenshots
------------
-
-![solarized dark](https://github.com/altercation/solarized/raw/master/img/solarized-vim.png)
-
 Downloads
 ---------
 
