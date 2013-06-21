@@ -88,25 +88,25 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
    capabilities, etc.")
 
 (defun roc-color-definitions (mode)
-  ;; (flet ((find-color (name)
-  ;;          (let* ((index (if window-system
-  ;;                            (if roc-degrade
-  ;;                                3
-  ;;                              (if roc-broken-srgb 2 1))
-  ;;                          (case (display-color-cells)
-  ;;                            (16 4)
-  ;;                            (8  5)
-  ;;                            (otherwise 3)))))
-  ;;            (nth index (assoc name roc-colors)))))
   (flet ((find-color (name)
-           (let ((index (if window-system
-                            (if roc-degrade
-                                3
-        		      (if roc-broken-srgb 2 1))
-        		  (if (= roc-termcolors 256)
-        		      3
-        		    4))))
+           (let* ((index (if window-system
+                             (if roc-degrade
+                                 3
+                               (if roc-broken-srgb 2 1))
+                           (case (display-color-cells)
+                             (16 4)
+                             (8  5)
+                             (otherwise 3)))))
              (nth index (assoc name roc-colors)))))
+  ;; (flet ((find-color (name)
+  ;;          (let ((index (if window-system
+  ;;                           (if roc-degrade
+  ;;                               3
+  ;;       		      (if roc-broken-srgb 2 1))
+  ;;       		  (if (= roc-termcolors 256)
+  ;;       		      3
+  ;;       		    4))))
+  ;;            (nth index (assoc name roc-colors)))))
     (let ((base03      (find-color 'base03))
           (base02      (find-color 'base02))
           (base01      (find-color 'base01))
