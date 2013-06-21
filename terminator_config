@@ -11,7 +11,7 @@
     use_system_font = False
     foreground_color = "#ffffff"
   [[roc-light]]
-    palette = "#1c1c1c:#262626:#585858:#626262:#808080:#8a8a8a:#e4e4e4:#ffffff:#ffff5f:#ffaf00:#d70000:#d700af:#af00ff:#0000ff:#5fd7d7:#00af00"
+    palette = "#af875f:#ff8700:#d70000:#d700af:#8700ff:#0000ff:#5fafd7:#008700:#1c1c1c:#262626:#585858:#626262:#808080:#8a8a8a:#e4e4e4:#ffffdf"
     background_darkness = 0.0
     use_system_font = False
     foreground_color = "#002b36"
