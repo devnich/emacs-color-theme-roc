@@ -65,6 +65,8 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
 ;;        hopefully these are closer to the intended colors than the sRGB values
 ;;        that Emacs seems to dislike
 (defvar roc-colors           ; ANSI(ROC terminal) Currently we are just changing the first column
+  ;; Windowed Emacs is using the sRGB (1) column
+  ;; terminator Emacs is using the 256 (3) column
   ;; name     sRGB      Gen RGB   256       16              8
   '((base03  "#002b36" "#042028" "#1c1c1c" "#002b36" "black")
     (base02  "#073642" "#0a2832" "#262626" "#073642" "black")
@@ -73,8 +75,8 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
     (base0   "#839496" "#708183" "#808080" "#839496" "blue")
     (base1   "#93a1a1" "#81908f" "#8a8a8a" "#93a1a1" "cyan")
     (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "#eee8d5" "white")
-    (base3   "#fdf5e6" "#fcf4dc" "#ffffff" "#fdf5e6" "white") ;; terminator emacs is using the 256 column
-    (yellow  "#b8860b" "#a57705" "#ffff5f" "#b8860b" "yellow")
+    (base3   "#fdf5e6" "#fcf4dc" "#ffffff" "#fdf5e6" "white") 
+    (yellow  "#b8860b" "#a57705" "#af875f" "#b8860b" "yellow") ;; actually dark goldenrod
     (orange  "#ff8c00" "#bd3612" "#ffaf00" "#ff8c00" "red")
     (red     "#b22222" "#c60007" "#d70000" "#b22222" "red")
     (magenta "#cd2990" "#c61b6e" "#d700af" "#cd2990" "magenta") ;; try magenta3 or maroon3
