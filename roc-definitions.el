@@ -73,15 +73,15 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
     (base0   "#839496" "#708183" "#808080" "#839496" "blue")
     (base1   "#93a1a1" "#81908f" "#8a8a8a" "#93a1a1" "cyan")
     (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "#eee8d5" "white")
-    (base3   "#fdf5e6" "#fcf4dc" "#ffffd7" "#fdf5e6" "white") ;; terminator emacs is using the 256 column
-    (yellow  "#b8860b" "#a57705" "#af8700" "#b8860b" "yellow")
-    (orange  "#ff8c00" "#bd3612" "#d75f00" "#ff8c00" "red")
+    (base3   "#fdf5e6" "#fcf4dc" "#ffffff" "#fdf5e6" "white") ;; terminator emacs is using the 256 column
+    (yellow  "#b8860b" "#a57705" "#ffff5f" "#b8860b" "yellow")
+    (orange  "#ff8c00" "#bd3612" "#ffaf00" "#ff8c00" "red")
     (red     "#b22222" "#c60007" "#d70000" "#b22222" "red")
-    (magenta "#cd2990" "#c61b6e" "#af005f" "#cd2990" "magenta") ;; try magenta3 or maroon3
-    (violet  "#68228b" "#5859b7" "#5f5faf" "#68228b" "magenta")
-    (blue    "#0000ff" "#2075c7" "#0087ff" "#0000ff" "blue")
-    (cyan    "#008b8b" "#259185" "#00afaf" "#008b8b" "cyan") ;; also try turquoise3
-    (green   "#228b22" "#728a05" "#5f8700" "#228b22" "green"))
+    (magenta "#cd2990" "#c61b6e" "#d700af" "#cd2990" "magenta") ;; try magenta3 or maroon3
+    (violet  "#68228b" "#5859b7" "#af00ff" "#68228b" "magenta")
+    (blue    "#0000ff" "#2075c7" "#0000ff" "#0000ff" "blue")
+    (cyan    "#008b8b" "#259185" "#5fd7d7" "#008b8b" "cyan") ;; also try turquoise3
+    (green   "#228b22" "#728a05" "#00af00" "#228b22" "green"))
   
   "This is a table of all the colors used by the ROC color theme. Each
    column is a different set, one of which will be chosen based on term
