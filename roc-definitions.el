@@ -75,7 +75,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
     (base0   "#839496" "#708183" "#808080" "#839496" "blue")
     (base1   "#93a1a1" "#81908f" "#8a8a8a" "#93a1a1" "cyan")
     (base2   "#eee8d5" "#e9e2cb" "#e4e4e4" "#eee8d5" "white")
-    (base3   "#fdf5e6" "#fcf4dc" "#ffffff" "#fdf5e6" "white") 
+    (base3   "#fdf5e6" "#fcf4dc" "#ffffdf" "#fdf5e6" "white") 
     (yellow  "#b8860b" "#a57705" "#af875f" "#b8860b" "yellow") ;; actually dark goldenrod
     (orange  "#ff8c00" "#bd3612" "#ffaf00" "#ff8c00" "red")
     (red     "#b22222" "#c60007" "#d70000" "#b22222" "red")
