@@ -184,7 +184,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
               (fg-violet `(:foreground ,violet))
               (fg-blue `(:foreground ,blue))
               (fg-cyan `(:foreground ,cyan))
-
+              
               (fmt-none `(:weight normal :slant normal  :underline nil        :inverse-video nil))
               (fmt-bold `(:weight ,bold  :slant normal  :underline nil        :inverse-video nil))
               (fmt-bldi `(:weight ,bold                 :underline nil        :inverse-video nil))
@@ -201,6 +201,7 @@ the \"Gen RGB\" column in roc-definitions.el to improve them further."
               (fmt-revb `(:weight ,bold  :slant normal  :underline nil        :inverse-video t))
               (fmt-revbb `(:weight ,bright-bold :slant normal :underline nil  :inverse-video t))
               (fmt-revbbu `(:weight ,bright-bold :slant normal  :underline ,underline :inverse-video t)))
+
           `((;; basic
              (default ((t (,@fg-base3 ,@bg-back)))) ; Normal @fg-base0 ,@bg-back
              (cursor ((t (,@fg-base03 ,@bg-base0)))) ; Cursor @fg-base03 ,@bg-base0
